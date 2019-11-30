@@ -8,15 +8,16 @@ width: 33.3333%;
 border: 2px solid black;
 `;
 
-const KDratio = () => (
+const CardContainer = ({
+        title,
+        value
+    }) => (
     <KDContainer>
-        <Card style={{}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+        <Card>
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    {value}
     </Card.Text>
             </Card.Body>
         </Card>
@@ -24,4 +25,4 @@ const KDratio = () => (
 
 )
 
-export default KDratio;
+export default CardContainer;

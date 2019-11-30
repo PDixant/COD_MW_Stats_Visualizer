@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {InputGroup, FormControl, Button} from 'react-bootstrap';
-import styled from 'styled-components';
-
+import CardContainer from './Card'
 class InputTextbox extends Component{
     state = { 
         profileName: "",
@@ -29,6 +28,28 @@ class InputTextbox extends Component{
         const { data } = this.state;
         
         console.log(data);
+        if(data.length !== 0){
+            return (
+                <div>
+                    <InputGroup className="mb-3">
+                        <FormControl
+                        placeholder="Recipient's username"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        onChange={this.getUser.bind(this)}
+                        />
+                        <InputGroup.Append>
+                        <Button variant="success"
+                        onClick={() => this.getData()}
+                        >Get Stats</Button>
+                        </InputGroup.Append>
+                    </InputGroup>
+                    <CardContainer
+                    title='kd'
+                    value="testing"
+                    />
+                </div>
+            )};
         return (
             <div>
                 <InputGroup className="mb-3">
