@@ -38,11 +38,12 @@ class Landing extends Component {
             </Navbar>
     )};
 }
-const mapStateToProps = state => ({
-    ...state
-})
-const mapDispatchToProps = dispatch => ({
-    simpleAction: () => dispatch(actions())
-   })
+// const mapStateToProps = state => ({
+//     ...state
+// })
+// const mapDispatchToProps = dispatch => ({
+//     simpleAction: () => dispatch(actions())
+//    })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+// export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default Landing;
