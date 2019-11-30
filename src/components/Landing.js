@@ -106,7 +106,7 @@ class Landing extends Component {
                     </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar>timePlayedTotal
+                </Navbar>
                 <ul>
                     <li>kd: {data.kdRatio.toFixed(2)}</li>
                     <li>games played: {data.gamesPlayed}</li>
