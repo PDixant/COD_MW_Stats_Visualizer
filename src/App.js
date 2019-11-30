@@ -9,7 +9,6 @@ function App() {
     <div>
       <Landing/>
       <InputTextbox/>
-      <CardContainer/>
     </div>
   );
 }

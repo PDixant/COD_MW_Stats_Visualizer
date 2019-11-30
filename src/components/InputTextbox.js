@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import {InputGroup, FormControl, Button} from 'react-bootstrap';
 import CardContainer from './Card'
+import styled from 'styled-components';
+
+const StyledDisplay = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+`;
 class InputTextbox extends Component{
     state = { 
         profileName: "",
@@ -64,6 +72,7 @@ class InputTextbox extends Component{
                         >Get Stats</Button>
                         </InputGroup.Append>
                     </InputGroup>
+                    <StyledDisplay>
                     <CardContainer
                     title='kd'
                     input={this.toRound(myStats.data.lifetime.all.properties.kdRatio)}
@@ -92,6 +101,7 @@ class InputTextbox extends Component{
                     title='ties'
                     input={myStats.data.lifetime.all.properties.ties}
                     />
+                    </StyledDisplay>
                 </div>
             )};
         return (
