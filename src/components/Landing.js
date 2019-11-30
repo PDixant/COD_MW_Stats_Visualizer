@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
-import Logo from './../MWL.svg'
 
 
 const StyledH1 = styled.h1`
