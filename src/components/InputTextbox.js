@@ -16,12 +16,13 @@ class InputTextbox extends Component{
     getData(){
         const { profileName } = this.state;
         const encodedName = encodeURIComponent(profileName);
-        console.log(encodedName)
-        const url = `https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/${encodedName}/profile/type/mp`
-        fetch(url)
-        .then(res => res.json())
-        .then(res => this.setState({ data: res }))
-        .catch(() => this.setState({ hasErrors: true }));
+        // use this to get api data
+        // console.log(encodedName)
+        // const url = `https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/${encodedName}/profile/type/mp`
+        // fetch(url)
+        // .then(res => res.json())
+        // .then(res => this.setState({ data: res }))
+        // .catch(() => this.setState({ hasErrors: true }));
     }
 
     render(){
