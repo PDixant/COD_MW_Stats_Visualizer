@@ -5,6 +5,10 @@ import styled from 'styled-components'
 const StyledH1 = styled.h1`
 text-align: Center;
 font-size: 80px;
+font-weight: bold;
+font-family: Impact;
+color: White;
+background: grey;
 `;
 
 class Landing extends Component {
