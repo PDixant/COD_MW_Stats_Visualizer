@@ -82,6 +82,14 @@ class InputTextbox extends Component{
                     input={myStats.data.lifetime.all.properties.gamesPlayed}
                     />
                     <CardContainer
+                    title='losses:'
+                    input={myStats.data.lifetime.all.properties.losses}
+                    />
+                    <CardContainer
+                    title='headshots:'
+                    input={myStats.data.lifetime.all.properties.headshots}
+                    />
+                    <CardContainer
                     title='win'
                     input={myStats.data.lifetime.all.properties.wins}
                     />
