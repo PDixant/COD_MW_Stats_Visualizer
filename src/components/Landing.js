@@ -6,12 +6,20 @@ import {
     actions
 } from "../store/Analytic"
 class Landing extends Component {
+    state = {
+        planets : {},
+    }
     
     componentDidMount (){
-
+        // fetch("https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/enderrao%231201/profile/type/mp")
+        // .then(res => res.json())
+        // .then(res => this.setState({ planets: res }))
+        // .catch(() => this.setState({ hasErrors: true }));
     }
 
     render(){
+        const { planets } = this.state;
+        console.log(JSON.stringify(planets));
         return(
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"> 
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
