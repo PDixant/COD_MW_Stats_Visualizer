@@ -1,16 +1,12 @@
 import React, {Component} from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import Link from 'react-router-dom';
-import { connect } from 'react-redux';
-import {
-    actions
-} from "../store/Analytic"
 class Landing extends Component {
     state = {
         planets : {},
     }
     
     componentDidMount (){
+        // TODO: move from
         // fetch("https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/enderrao%231201/profile/type/mp")
         // .then(res => res.json())
         // .then(res => this.setState({ planets: res }))
@@ -21,7 +17,7 @@ class Landing extends Component {
         const { planets } = this.state;
         console.log(JSON.stringify(planets));
         return(
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"> 
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -46,12 +42,5 @@ class Landing extends Component {
             </Navbar>
     )};
 }
-// const mapStateToProps = state => ({
-//     ...state
-// })
-// const mapDispatchToProps = dispatch => ({
-//     simpleAction: () => dispatch(actions())
-//    })
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Landing);
 export default Landing;
