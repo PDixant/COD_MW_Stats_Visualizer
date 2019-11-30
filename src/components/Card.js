@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from 'react-bootstrap';
 
 const KDContainer = styled.div`
 height: 100%;
-width: 33.3333%;
-border: 2px solid black;
+width: 500px;
+background: #282C34;
+border-radius: 15px;
+color: white;
+margin: 50px;
+text-align: center;
+`;
+
+const StyledP = styled.p`
+color: white;
 `;
 
 const CardContainer = ({
@@ -13,14 +20,12 @@ const CardContainer = ({
         input
     }) => (
     <KDContainer>
-        <Card>
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                    {input}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+    <h3>
+    {title}
+    </h3>
+    <StyledP>
+    {input}
+    </StyledP>
     </KDContainer>
 
 )

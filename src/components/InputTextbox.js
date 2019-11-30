@@ -5,9 +5,11 @@ import styled from 'styled-components';
 
 const StyledDisplay = styled.div`
 display: flex;
-justify-content: center;
-align-items: center;
 width: 100%;
+height: 150px;
+flex-wrap: wrap;
+justify-content: flex-start;
+align-content: flex-start;
 `;
 class InputTextbox extends Component{
     state = { 
@@ -23,6 +25,7 @@ class InputTextbox extends Component{
                 }
             }
         },
+        isPopulated: false,
     }
 
     getUser(event){
@@ -33,11 +36,14 @@ class InputTextbox extends Component{
         const { profileName } = this.state;
         const encodedName = encodeURIComponent(profileName);
         // use this to get api data
-        console.log(encodedName)
+        // console.log(encodedName)
         const url = `https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/${encodedName}/profile/type/mp`
         fetch(url)
         .then(res => res.json())
-        .then(res => this.setState({ myStats: res }))
+        .then(res => this.setState({
+            myStats: res,
+            isPopulated: true,
+        }))
         .catch(() => this.setState({ hasErrors: true }));
     }
 
@@ -53,9 +59,9 @@ class InputTextbox extends Component{
     }
 
     render(){
-        const { myStats } = this.state;
+        const { myStats, isPopulated } = this.state;
         
-        if(myStats !== undefined){
+        if(isPopulated){
             console.log(myStats);
             return (
                 <div>
@@ -74,11 +80,11 @@ class InputTextbox extends Component{
                     </InputGroup>
                     <StyledDisplay>
                     <CardContainer
-                    title='kd'
+                    title='K/D Ratio:'
                     input={this.toRound(myStats.data.lifetime.all.properties.kdRatio)}
                     />
                     <CardContainer
-                    title='games played:'
+                    title='Games Played:'
                     input={myStats.data.lifetime.all.properties.gamesPlayed}
                     />
                     <CardContainer
@@ -94,19 +100,19 @@ class InputTextbox extends Component{
                     input={myStats.data.lifetime.all.properties.wins}
                     />
                     <CardContainer
-                    title='Death'
+                    title='Death:'
                     input={myStats.data.lifetime.all.properties.deaths}
                     />
                     <CardContainer
-                    title='Days played'
-                    input={`${this.toDays(myStats.data.lifetime.all.properties.timePlayedTotal)}, Hours: ${this.toHours(myStats.data.lifetime.all.properties.timePlayedTotal)}`}
+                    title='Days and Hours played:'
+                    input={`Days: ${this.toDays(myStats.data.lifetime.all.properties.timePlayedTotal)}, Hours: ${this.toHours(myStats.data.lifetime.all.properties.timePlayedTotal)}`}
                     />
                     <CardContainer
-                    title='suicides'
+                    title='Suicides:'
                     input={myStats.data.lifetime.all.properties.suicides}
                     />
                     <CardContainer
-                    title='ties'
+                    title='Ties:'
                     input={myStats.data.lifetime.all.properties.ties}
                     />
                     </StyledDisplay>
