@@ -136,7 +136,7 @@ class InputTextbox extends Component {
                     </InputGroup.Append>
                 </InputGroup>
 
-                <img src={Logo} alt="image"></img>
+                <img src={Logo} alt="modern warfar pic"></img>
             </div>
         )
     };
