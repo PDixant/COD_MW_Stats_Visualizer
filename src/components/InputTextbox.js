@@ -137,6 +137,7 @@ class InputTextbox extends Component {
                 </InputGroup>
 
                 <img src={Logo} alt="image"></img>
+                
             </div>
         )
     };
