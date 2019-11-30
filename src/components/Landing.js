@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
+import styled from 'styled-components'
+
+
+const StyledH1 = styled.h1`
+text-align: Center;
+font-size: 80px;
+`;
+
 class Landing extends Component {
 
     componentDidMount() {
@@ -12,17 +19,10 @@ class Landing extends Component {
 
     render() {
         return (
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <Navbar.Brand href="#">Test</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#deets">Player Stats</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">Dank memes</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <div>
+                <StyledH1 >Call of Duty: Modern Warfare Player Stats</StyledH1>
+            </div>
+
         )
     };
 }

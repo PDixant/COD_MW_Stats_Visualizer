@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card } from 'react-bootstrap';
 
 const KDContainer = styled.div`
 height: 100%;

@@ -80,34 +80,42 @@ class InputTextbox extends Component {
                         </InputGroup.Append>
                     </InputGroup>
                     <StyledDisplay>
-                        <CardContainer
-                            title='K/D Ratio:'
-                            input={this.toRound(myStats.data.lifetime.all.properties.kdRatio)}
-                        />
-                        <CardContainer
-                            title='Games Played:'
-                            input={myStats.data.lifetime.all.properties.gamesPlayed}
-                        />
-                        <CardContainer
-                            title='Win:'
-                            input={myStats.data.lifetime.all.properties.wins}
-                        />
-                        <CardContainer
-                            title='Death:'
-                            input={myStats.data.lifetime.all.properties.deaths}
-                        />
-                        <CardContainer
-                            title='Days and Hours played:'
-                            input={`Days: ${this.toDays(myStats.data.lifetime.all.properties.timePlayedTotal)}, Hours: ${this.toHours(myStats.data.lifetime.all.properties.timePlayedTotal)}`}
-                        />
-                        <CardContainer
-                            title='Suicides:'
-                            input={myStats.data.lifetime.all.properties.suicides}
-                        />
-                        <CardContainer
-                            title='Ties:'
-                            input={myStats.data.lifetime.all.properties.ties}
-                        />
+                    <CardContainer
+                    title='K/D Ratio:'
+                    input={this.toRound(myStats.data.lifetime.all.properties.kdRatio)}
+                    />
+                    <CardContainer
+                    title='Games Played:'
+                    input={myStats.data.lifetime.all.properties.gamesPlayed}
+                    />
+                    <CardContainer
+                    title='losses:'
+                    input={myStats.data.lifetime.all.properties.losses}
+                    />
+                    <CardContainer
+                    title='headshots:'
+                    input={myStats.data.lifetime.all.properties.headshots}
+                    />
+                    <CardContainer
+                    title='win'
+                    input={myStats.data.lifetime.all.properties.wins}
+                    />
+                    <CardContainer
+                    title='Death:'
+                    input={myStats.data.lifetime.all.properties.deaths}
+                    />
+                    <CardContainer
+                    title='Days and Hours played:'
+                    input={`Days: ${this.toDays(myStats.data.lifetime.all.properties.timePlayedTotal)}, Hours: ${this.toHours(myStats.data.lifetime.all.properties.timePlayedTotal)}`}
+                    />
+                    <CardContainer
+                    title='Suicides:'
+                    input={myStats.data.lifetime.all.properties.suicides}
+                    />
+                    <CardContainer
+                    title='Ties:'
+                    input={myStats.data.lifetime.all.properties.ties}
+                    />
                     </StyledDisplay>
                 </div>
             )
