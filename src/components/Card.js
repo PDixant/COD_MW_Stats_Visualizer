@@ -10,15 +10,15 @@ border: 2px solid black;
 
 const CardContainer = ({
         title,
-        value
+        input
     }) => (
     <KDContainer>
         <Card>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                    {value}
-    </Card.Text>
+                    {input}
+                </Card.Text>
             </Card.Body>
         </Card>
     </KDContainer>

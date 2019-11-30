@@ -4,8 +4,17 @@ import CardContainer from './Card'
 class InputTextbox extends Component{
     state = { 
         profileName: "",
-        data: {},
         hasErrors: "",
+        myStats: { 
+            data: {
+                lifetime:{
+                    all:{
+                        properties: {
+                        }
+                    }
+                }
+            }
+        },
     }
 
     getUser(event){
@@ -16,19 +25,30 @@ class InputTextbox extends Component{
         const { profileName } = this.state;
         const encodedName = encodeURIComponent(profileName);
         // use this to get api data
-        // console.log(encodedName)
-        // const url = `https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/${encodedName}/profile/type/mp`
-        // fetch(url)
-        // .then(res => res.json())
-        // .then(res => this.setState({ data: res }))
-        // .catch(() => this.setState({ hasErrors: true }));
+        console.log(encodedName)
+        const url = `https://my.callofduty.com/api/papi-client/stats/cod/v1/title/mw/platform/battle/gamer/${encodedName}/profile/type/mp`
+        fetch(url)
+        .then(res => res.json())
+        .then(res => this.setState({ myStats: res }))
+        .catch(() => this.setState({ hasErrors: true }));
+    }
+
+    toDays(time){
+        return parseInt(time / (60*60) / 24);
+    }
+    toHours(time){
+        return parseInt(time / (60*60) % 24);
+    }
+
+    toRound(num){
+        return parseFloat(num).toFixed(2);
     }
 
     render(){
-        const { data } = this.state;
+        const { myStats } = this.state;
         
-        console.log(data);
-        if(data.length !== 0){
+        if(myStats !== undefined){
+            console.log(myStats);
             return (
                 <div>
                     <InputGroup className="mb-3">
@@ -46,7 +66,31 @@ class InputTextbox extends Component{
                     </InputGroup>
                     <CardContainer
                     title='kd'
-                    value="testing"
+                    input={this.toRound(myStats.data.lifetime.all.properties.kdRatio)}
+                    />
+                    <CardContainer
+                    title='games played:'
+                    input={myStats.data.lifetime.all.properties.gamesPlayed}
+                    />
+                    <CardContainer
+                    title='win'
+                    input={myStats.data.lifetime.all.properties.wins}
+                    />
+                    <CardContainer
+                    title='Death'
+                    input={myStats.data.lifetime.all.properties.deaths}
+                    />
+                    <CardContainer
+                    title='Days played'
+                    input={`${this.toDays(myStats.data.lifetime.all.properties.timePlayedTotal)}, Hours: ${this.toHours(myStats.data.lifetime.all.properties.timePlayedTotal)}`}
+                    />
+                    <CardContainer
+                    title='suicides'
+                    input={myStats.data.lifetime.all.properties.suicides}
+                    />
+                    <CardContainer
+                    title='ties'
+                    input={myStats.data.lifetime.all.properties.ties}
                     />
                 </div>
             )};
