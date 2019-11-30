@@ -17,18 +17,18 @@ color: white;
 `;
 
 const CardContainer = ({
-        title,
-        input
-    }) => (
-    <KDContainer>
-    <h3>
-    {title}
-    </h3>
-    <StyledP>
-    {input}
-    </StyledP>
-    </KDContainer>
+    title,
+    input
+}) => (
+        <KDContainer>
+            <h3>
+                {title}
+            </h3>
+            <StyledP>
+                {input}
+            </StyledP>
+        </KDContainer>
 
-)
+    )
 
 export default CardContainer;
