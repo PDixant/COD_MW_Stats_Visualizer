@@ -1,10 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Landing from './components/Landing';
+import InputTextbox from './components/InputTextbox';
 function App() {
   return (
-    <Landing/>
+    <div>
+      <Landing/>
+      <InputTextbox/>
+    </div>
   );
 }
 
